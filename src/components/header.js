@@ -6,7 +6,10 @@ const Header = () => {
     <nav class="head1">
         
   <ul>
-    <li id = "title">Vexxed, By Aakash Rajaraman</li>
+    
+  
+    {/*<li id = "title">Vexxed, By Aakash Rajaraman</li>*/}
+    
     <li ><a href="#">Home</a></li>
     <li ><a href="#">Short Stories</a></li>
     <li ><a href="#">Poetry</a></li>
