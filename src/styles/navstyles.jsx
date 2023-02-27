@@ -1,5 +1,5 @@
 import React from "react";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 export const NavLink = styled(Link)`
 display: inline-block;
@@ -18,15 +18,24 @@ transition: all 0.2s ease;
 export const Title = styled(Link)`
 display: inline-block;
 margin: 0 0 0 0;
-padding: 10px 0;
 color: #fff;
-font-size: 20px;
+font-size: 50px;
 text-decoration: none;
-font-weight: bold;
-transition: all 0.2s ease;
 align-items: center;
-&:hover{
-  color: #ebcb19;
+font-family:'Raleway';
+
+}
+`;
+export const Subtitle = styled.h1`
+margin: 0px 0 0 0;
+padding-top: 15px;
+color: #fff;
+font-size: 24px;
+text-decoration: none;
+font-family:'Raleway Thin';
+font-weight: bold;
+align-items: center;
+
 }
 `;
 

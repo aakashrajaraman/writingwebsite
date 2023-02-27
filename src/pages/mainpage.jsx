@@ -1,4 +1,7 @@
+import Header from "../components/header";
 const Mainpage=(props)=>{
-return(<h1>hello this is the mainpage</h1>)
+return(
+<Header/>
+    )
 }
 export default Mainpage;

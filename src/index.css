@@ -13,7 +13,7 @@ code {
 }
 @font-face {
   font-family: 'Raleway';
-  src: local('Raleway-Thin'), url('./fonts/Raleway-ExtraBoldItalic.ttf');
+  src: local('Raleway-Thin'), url('./fonts/Raleway-Bold.ttf');
 }
 @font-face {
   font-family: 'Raleway Thin';
