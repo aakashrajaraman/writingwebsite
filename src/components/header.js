@@ -1,5 +1,5 @@
 
-import './header.css';
+import '../styles/header.css';
 import { NavLink, Title, Subtitle } from '../styles/navstyles';
 const Header = () => {
   return (
@@ -25,7 +25,6 @@ const Header = () => {
           <NavLink to="/">About</NavLink>
         </ul>
       </nav>
-
     </div>
 
   );
