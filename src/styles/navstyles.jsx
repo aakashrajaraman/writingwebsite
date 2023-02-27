@@ -1,14 +1,32 @@
 import React from "react";
 import {  Link } from "react-router-dom";
 import styled from "styled-components";
-const NavLink = styled(Link)`
-  padding: 20px;
-  color: red;
-  text-decoration: none;
-  &:hover {
-    color: red;
-    background: blue;
-  }
+export const NavLink = styled(Link)`
+display: inline-block;
+margin: 0 0 0 0;
+padding: 10px 10px 10px 10px;
+color: #fff;
+font-size: 20px;
+text-decoration: none;
+font-weight: bold;
+transition: all 0.2s ease;
+&:hover{
+  color: #ebcb19;
+}
 `;
 
-export default NavLink;
+export const Title = styled(Link)`
+display: inline-block;
+margin: 0 0 0 0;
+padding: 10px 0;
+color: #fff;
+font-size: 20px;
+text-decoration: none;
+font-weight: bold;
+transition: all 0.2s ease;
+align-items: center;
+&:hover{
+  color: #ebcb19;
+}
+`;
+

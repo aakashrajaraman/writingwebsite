@@ -1,23 +1,32 @@
 
 import './header.css';
+import {NavLink, Title} from '../styles/navstyles';
 const Header = () => {
     return(
+      
     <div class="header">
     <nav class="head1">
         
   <ul>
     
   
-    <li id = "title">Vexxed, By Aakash Rajaraman</li>
+    <Title to = "/" id = "title">Existential Ironies, By Aakash Rajaraman</Title>
     
-    <li ><a href="#">Home</a></li>
-    <li ><a href="#">Short Stories</a></li>
-    <li ><a href="#">Poetry</a></li>
-    <li ><a href="#">About</a></li>
+    {/**/}
+    
   </ul>
+</nav>
+<nav class="head2">
+  <ul>
+  <NavLink to ="/">Home</NavLink>
+    <NavLink to ="/">Short Stories</NavLink>
+    <NavLink to= "/">Poetry</NavLink>
+    <NavLink to= "/">About</NavLink>
+    </ul>
 </nav>
 
     </div>
+    
 );}
 
 export default Header;

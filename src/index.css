@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: 'Raleway';
+  src: local('Raleway-Thin'), url('./fonts/Raleway-ExtraBoldItalic.ttf');
+}
+@font-face {
+  font-family: 'Raleway Thin';
+  src: local('Raleway-Thin'), url('./fonts/Raleway-Thin.ttf');
+}

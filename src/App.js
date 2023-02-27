@@ -10,8 +10,7 @@ function App() {
   return (
     <Router>
     <Routes>
-      <Route path='/' element = {<Navbar/>}/>
-      <Route path='mainpage' element = {<Mainpage/>}/>
+      <Route path='/' element = {<Header/>}/>
     </Routes>
     </Router>
   );
