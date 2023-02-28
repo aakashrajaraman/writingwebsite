@@ -1,9 +1,13 @@
 .main{
     position: relative;
     top: 120px;
-    background-color: rgba(37, 2, 77, 1);
+    background-color: rgb(17, 1, 36);
 }
 .one{
     text-align: center;
-    padding-top: 100px;
+    padding-top: 90px;
+    
+}
+h1{
+    color: rgb(235, 225, 246);
 }
