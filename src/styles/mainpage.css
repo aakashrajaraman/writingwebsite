@@ -1,4 +1,9 @@
-.one{
+.main{
     position: relative;
-    top: 240px;
+    top: 120px;
+    background-color: rgba(37, 2, 77, 1);
+}
+.one{
+    text-align: center;
+    padding-top: 100px;
 }
