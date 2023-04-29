@@ -1,0 +1,26 @@
+.main{
+    position: relative;
+    top: 121px;
+    background-color: rgb(17, 1, 36);
+    width: 100vw;
+}
+.one{
+    text-align: left;
+    padding-top: 6%;
+    padding-left: 11%;
+    
+}
+h1{
+    color: rgb(235, 225, 246);
+    font-family: 'Raleway Thin';
+}
+.section{
+    position: fixed;
+    left: 75%;
+    top: 30%;
+}
+.section p{
+    color: rgb(235, 225, 246);
+    font-family: 'Raleway Thin';
+    font-size: 100%;
+}
