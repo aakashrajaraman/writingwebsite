@@ -1,6 +1,32 @@
 import Header from "../components/header";
 import "../styles/mainpage.css";
+import {client} from "../db/db.js"
+import { useEffect } from "react";
+
 const Mainpage = (props) => {
+    /*
+    const [stories, setStories] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try{
+                await client.connect();
+                const db = client.db("writingwebsite");
+                const storiesCollection = db.collection("shortstories");
+                const stories = await storiesCollection.find({}).toArray();
+                setStories(stories);
+            }catch (error){
+                console.log(error);
+            }
+
+        }
+        fetchData();
+
+    })*/
+
+
+
+
+
     return (
         <div class = "main">
             <div class = "line" style={{width: "1.5px", height: "100%", backgroundColor: "#ffffff", marginLeft: "75%", position:
@@ -24,26 +50,8 @@ const Mainpage = (props) => {
         </div>
         
             <div class = "one">
-            
-                <h1>testline1</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
-                <h1>testline</h1>
+      
+      
     <h1>testline</h1>
     
     
