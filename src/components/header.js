@@ -1,6 +1,6 @@
 
 import '../styles/header.css';
-import { NavLink, Title, Subtitle } from '../styles/navstyles';
+import { NavLink, Title, Subtitle } from '../styles/navstyles.jsx';
 const Header = () => {
   return (
 

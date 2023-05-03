@@ -10,15 +10,16 @@ module.exports = {
     fallback: {
       dgram: false,
       fs: false,
-      os: require.resolve('os-browserify/browser'),
+      os: false,
       dns: require.resolve('dns'),
       crypto: require.resolve('crypto-browserify'),
       http: require.resolve('stream-http'),
       assert: require.resolve('assert/'),
+      timers: require.resolve("timers-browserify"),
       util: require.resolve('util/'),
       stream: require.resolve('stream-browserify'),
       https: require.resolve('https-browserify'),
-      path: require.resolve('path-browserify'),
+      path: false,
     },
   },
 };
