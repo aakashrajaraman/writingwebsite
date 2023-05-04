@@ -2,18 +2,50 @@ import Header from "../components/header";
 import "../styles/mainpage.css";
 
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 
-const Mainpage = (props) => {
-
-    const [story, setStory] = useState([]);
+const Mainpage = () => {
+    console.log("???? start");
+    //const [Story, setStory] = useState([]);
     useEffect(() => {
-        fetch("/api/data")
-            .then((res) => res.json())
-            .then(story => setStory(story))
-            .catch((err) => console.log(err));
-    }, []);
+        const fetchData = async () => {
+            console.log("???? start");
+            try {
+                console.log("???? start");
+                var data = JSON.stringify({
+                    "collection": "shortstories",
+                    "database": "Documents",
+                    "dataSource": "writingcluster",
+                });
+
+                var config = {
+                    method: 'post',
+                    url: 'https://ap-south-1.aws.data.mongodb-api.com/app/data-rvxaz/endpoint/data/v1/action/findOne',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Request-Headers': '*',
+                        'api-key': 'T8XS025QN7XuAdPtZWIq46QyEd5OslmW6mnSJapqyD22NM8A7sJI5IRSwaOf49IY',
+                    },
+                    data: data
+                };
+
+                axios(config)
+                    .then(function (response) {
+                        //setStory(response.data);
+                        console.log(JSON.stringify(response.data));
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, [])
 
     return (
         <div class="main">
@@ -42,12 +74,24 @@ const Mainpage = (props) => {
             </div>
 
             <div class="one">
-                {story.map(story => (
-                    <h1>{story.title}</h1>
-                ))}
+                <h1></h1>
 
+                <h1>testline1</h1>
                 <h1>testline</h1>
-
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
+                <h1>testline</h1>
 
 
             </div>

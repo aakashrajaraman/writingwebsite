@@ -1,20 +1,31 @@
-import { connect, Schema as _Schema, model } from 'mongoose';
-const url =
-    "mongodb+srv://rajaramanaakash:Aakash5122@writingcluster.9r7ucj1.mongodb.net/?retryWrites=true&w=majority";
-connect(url, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-    console.log('Connected to database');
-}).catch((err) => {
-    console.error(err);
+import axios from 'axios';
+import { useState } from 'react';
+
+
+console.log("???? start");
+var data = JSON.stringify({
+    "collection": "shortstories",
+    "database": "Documents",
+    "dataSource": "writingcluster",
+    
 });
 
-const Schema = _Schema;
-const mySchema = new Schema({
-    // Define the schema fields here
-    _id: String,
-    title: String,
-    date: String,
-    content: String,
-});
+var config = {
+    method: 'post',
+    url: 'https://ap-south-1.aws.data.mongodb-api.com/app/data-rvxaz/endpoint/data/v1/action/findOne',
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Request-Headers': '*',
+        'api-key': 'T8XS025QN7XuAdPtZWIq46QyEd5OslmW6mnSJapqyD22NM8A7sJI5IRSwaOf49IY',
+    },
+    data: data
+};
 
-export const MyModel = model('Documents.shortstories', mySchema);
-
+axios(config)
+    .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
