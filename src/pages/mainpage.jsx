@@ -5,15 +5,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 
-
 const Mainpage = () => {
-    console.log("???? start");
-    //const [Story, setStory] = useState([]);
+
+    const [Story, setStory] = useState([]);
     useEffect(() => {
-        const fetchData = async () => {
-            console.log("???? start");
+        const fetchData =()=> {
             try {
-                console.log("???? start");
+                console.log("fetching data");
                 var data = JSON.stringify({
                     "collection": "shortstories",
                     "database": "Documents",
@@ -46,6 +44,7 @@ const Mainpage = () => {
         };
         fetchData();
     }, [])
+
 
     return (
         <div class="main">
