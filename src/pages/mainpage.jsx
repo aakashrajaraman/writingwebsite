@@ -3,12 +3,11 @@ import "../styles/mainpage.css";
 import { useState, useEffect } from 'react';
 
 
-
 const Mainpage = () => {
     const [title, setTitle] = useState('');
 
   useEffect(() => {
-    fetch('/document')
+    fetch('/data')
       .then(response => response.json())
       .then(data => setTitle(data))
       .catch(error => console.error(error));

@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Mainpage from './pages/mainpage.jsx';
-import Test from './components/testcomponent.jsx';
+import TestPage from "./pages/testpage.jsx";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Mainpage />} />
+        <Route path='/' element={<TestPage />} />
       </Routes>
     </Router>
   );
