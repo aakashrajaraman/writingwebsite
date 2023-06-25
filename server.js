@@ -22,7 +22,7 @@ app.get('/document', (req, res) => {
     collection.find({}).toArray((err, documents) => {
       if (err) {
         console.error(err);
-        return res.status(500).json({ error: 'Internal Document Error' });
+        return res.status(500).json({ error: 'Internal document error' });
       }
 
       res.json(documents);
