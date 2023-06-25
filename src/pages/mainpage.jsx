@@ -10,19 +10,20 @@ const Mainpage = () => {
   useEffect(() => {
     fetch('/document')
       .then(response => response.json())
-      .then(data => setTitle(data.title))
+      .then(data => setTitle(data))
       .catch(error => console.error(error));
   }, []);
+  console.log(title);
 
     return (
-        <div class="main">
-            <div class="line" style={{
+        <div className="main">
+            <div className="line" style={{
                 width: "1.5px", height: "100%", backgroundColor: "#ffffff", marginLeft: "75%", position:
                     "absolute"
             }}>
 
             </div>
-            <div class="section">
+            <div className="section">
                 <img src="./prop.jpeg" style={{
                     width: "30%", height: "30%", borderRadius: "10%",
                     marginLeft: "30%", marginTop: "4%"
@@ -35,12 +36,12 @@ const Mainpage = () => {
                     <br /><br />
                     I primarily write poetry and short stories, but occasionally I'll wade my way into non-fiction.
                     My work centers around existentialism, and what it means to be alive here and now. I hope you'll
-                    enjoy and/or feel perplexed!
+                    enjoy and/or feel perplexed
 
                 </p>
             </div>
 
-            <div class="one">
+            <div className="one">
                 <h1></h1>
 
                 <h1>{title}</h1>
