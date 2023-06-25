@@ -6,6 +6,13 @@ const app = express();
 const port = 5000;
 
 app.get('/document', (req, res) => {
+  console.log('GET /document');
+  console.log('GET /document');
+  console.log('GET /document');
+  console.log('GET /document');
+  console.log('GET /document');
+  console.log('GET /document');
+  
   const mongoUrl = "mongodb+srv://aakashatwestview:Aakash5122!@cluster0.jfw6ub0.mongodb.net/?retryWrites=true&w=majority";
   const dbName = "material";
   const collectionName = "stories";
