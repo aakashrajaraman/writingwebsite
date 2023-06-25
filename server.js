@@ -3,7 +3,7 @@ import cors from 'cors';
 import { MongoClient } from 'mongodb';
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.get('/document', (req, res) => {
   const mongoUrl = "mongodb+srv://aakashatwestview:Aakash5122!@cluster0.jfw6ub0.mongodb.net/?retryWrites=true&w=majority";
@@ -13,7 +13,7 @@ app.get('/document', (req, res) => {
   MongoClient.connect(mongoUrl, (err, client) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ error: 'Internal Server Error' });
+      return res.status(500).json({ error: 'Mongo Server Error' });
     }
 
     const db = client.db(dbName);
@@ -22,7 +22,7 @@ app.get('/document', (req, res) => {
     collection.find({}).toArray((err, documents) => {
       if (err) {
         console.error(err);
-        return res.status(500).json({ error: 'Internal Server Error' });
+        return res.status(500).json({ error: 'Internal Document Error' });
       }
 
       res.json(documents);

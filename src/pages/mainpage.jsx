@@ -1,6 +1,6 @@
 import Header from "../components/header";
 import "../styles/mainpage.css";
-
+import { useState, useEffect } from 'react';
 
 
 
@@ -43,7 +43,7 @@ const Mainpage = () => {
             <div class="one">
                 <h1></h1>
 
-                <h1>testline1</h1>
+                <h1>{title}</h1>
                 <h1>testline</h1>
                 <h1>testline</h1>
                 <h1>testline</h1>
