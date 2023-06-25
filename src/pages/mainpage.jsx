@@ -1,50 +1,18 @@
 import Header from "../components/header";
 import "../styles/mainpage.css";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+
 
 
 const Mainpage = () => {
+    const [title, setTitle] = useState('');
 
-    const [Story, setStory] = useState([]);
-    useEffect(() => {
-        const fetchData =()=> {
-            try {
-                console.log("fetching data");
-                var data = JSON.stringify({
-                    "collection": "shortstories",
-                    "database": "Documents",
-                    "dataSource": "writingcluster",
-                });
-
-                var config = {
-                    method: 'post',
-                    url: 'https://ap-south-1.aws.data.mongodb-api.com/app/data-rvxaz/endpoint/data/v1/action/findOne',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Access-Control-Request-Headers': '*',
-                        'api-key': 'T8XS025QN7XuAdPtZWIq46QyEd5OslmW6mnSJapqyD22NM8A7sJI5IRSwaOf49IY',
-                    },
-                    data: data
-                };
-
-                axios(config)
-                    .then(function (response) {
-                        //setStory(response.data);
-                        console.log(JSON.stringify(response.data));
-
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        fetchData();
-    }, [])
-
+  useEffect(() => {
+    fetch('/document')
+      .then(response => response.json())
+      .then(data => setTitle(data.title))
+      .catch(error => console.error(error));
+  }, []);
 
     return (
         <div class="main">
