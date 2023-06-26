@@ -6,13 +6,16 @@ import { useState, useEffect } from 'react';
 const Mainpage = () => {
     const [title, setTitle] = useState('');
 
-  useEffect(() => {
-    fetch('/data')
-      .then(response => response.json())
-      .then(data => setTitle(data))
-      .catch(error => console.error(error));
-  }, []);
-  console.log(title);
+    useEffect(() => {
+        fetch('http://localhost:5000/document')
+          .then(response => response.json())
+          .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+              setTitle(data[0].title);
+            }
+          })
+          .catch(error => console.error(error));
+      }, []);
 
     return (
         <div className="main">

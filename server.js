@@ -1,30 +1,41 @@
 import express from 'express';
 import cors from 'cors';
-import axios from 'axios';
+import { MongoClient } from 'mongodb';
 
 const app = express();
 const port = 5000;
+
 app.use(cors());
-app.get('/data', async (req, res) => {
-  console.log('GET request received at /data');
+
+// MongoDB connection URL
+const mongoUrl = "mongodb+srv://aakashatwestview:Aakash5122!@cluster0.jfw6ub0.mongodb.net/?retryWrites=true&w=majority";
+
+app.get('/document', async (req, res) => {
+  console.log('GET /document');
+
   try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    const data = response.data;
-    res.json(data);
-    console.log(data)
-    console.log('Data sent');
+    const client = new MongoClient(mongoUrl);
+    await client.connect();
+
+    const dbName = "material";
+    const collectionName = "stories";
+
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+
+    const documents = await collection.find({}).toArray();
+    console.log('Retrieved documents:', documents);
+
+    res.json(documents);
+
+    await client.close();
+    console.log('Connection closed');
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error fetching data' });
+    console.error('Error connecting to the MongoDB database:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
-
-
-// ...
-
