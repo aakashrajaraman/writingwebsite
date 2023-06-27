@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 const Mainpage = () => {
     const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:5000/document')
@@ -12,6 +13,7 @@ const Mainpage = () => {
           .then(data => {
             if (Array.isArray(data) && data.length > 0) {
               setTitle(data[0].title);
+              setContent(data[0].content);
             }
           })
           .catch(error => console.error(error));
